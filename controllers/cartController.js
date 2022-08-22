@@ -5,7 +5,7 @@ const userModel = require('../models/userModel');
 const AllCarts = async (req, res) => {
     try {
         let cartsAll = await cartModel.getAllCarts();
-        console.log(`Three users firts ${JSON.stringify(cartsAll)} at day ${req.today}`);
+        console.log(`All Carts ${JSON.stringify(cartsAll)} at day ${req.today}`);
         res.status(200).send(cartsAll);
     } catch (error) {
         console.log(error)
@@ -16,7 +16,7 @@ const cartsById = async (req, res) => {
     try {
         let { id } = req.params
         let cart = await cartModel.getCartsById(id);
-        console.log(`Three users firts ${JSON.stringify(cart)} at day ${req.today}`);
+        console.log(`Carts By id ${JSON.stringify(cart)} at day ${req.today}`);
         res.status(200).send(cart);
     } catch (error) {
         console.log(error)

@@ -6,7 +6,7 @@ const getMostExpensivesByCategory = require('../helpers/mostExpensives')
 const getAllProducts = async (req, res) => {
     try {
         let products = await productModel.getAllProducts();
-        console.log(`Three users firts ${JSON.stringify(products)} at day ${req.today}`);
+        console.log(`All Products ${JSON.stringify(products)} at day ${req.today}`);
         res.status(200).send(products);
     } catch (error) {
         console.log(error)
@@ -17,7 +17,7 @@ const productsById = async (req, res) => {
     try {
         let { id } = req.params
         let productById = await productModel.getProductsById(id);
-        console.log(`Three users firts ${JSON.stringify(productById)} at day ${req.today}`);
+        console.log(`TProducts By id ${JSON.stringify(productById)} at day ${req.today}`);
         res.status(200).send(productById);
     } catch (error) {
         console.log(error)
@@ -27,7 +27,7 @@ const productsById = async (req, res) => {
 const allCategories = async (req, res) => {
     try {
         let categories = await productModel.getAllCategories();
-        console.log(`Three users firts ${JSON.stringify(categories)} at day ${req.today}`);
+        console.log(`All categories ${JSON.stringify(categories)} at day ${req.today}`);
         res.status(200).send(categories);
     } catch (error) {
         console.log(error)
@@ -37,7 +37,7 @@ const productsByCategory = async (req, res) => {
     try {
         let { name } = req.params
         let category = await productModel.getProductsByCategory(name);
-        console.log(`Three users firts ${JSON.stringify(category)} at day ${req.today}`);
+        console.log(`Products By category ${JSON.stringify(category)} at day ${req.today}`);
         res.status(200).send(category);
     } catch (error) {
         console.log(error)
@@ -73,7 +73,7 @@ async function getPricesProduct(req, res) {
         })
         newPrices.sort((a, b) => a.price - b.price);
         if (order === 'desc') newPrices.reverse();
-        console.log(`Three users firts ${JSON.stringify(newPrices)} at day ${req.today}`);
+        console.log(`Prices By Product ${JSON.stringify(newPrices)} at day ${req.today}`);
         res.status(200).send(newPrices);
     }
     catch (error) {
