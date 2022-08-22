@@ -27,11 +27,9 @@ router.get('/products/prices', productController.getPricesProduct)
 router.get('/products/categories/:name', productController.productsByCategory)
 router.get('/products/:id', productController.productsById)
 
-
 router.get('/users', userController.allUsers)
 router.get('/users/firsts', userController.getUsersLimit)
 router.get('/users/:id', userController.userById)
-
 
 router.use(errorHandler.notFound);
 
